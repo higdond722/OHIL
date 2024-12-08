@@ -1,0 +1,270 @@
+{
+ "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/tile-formatting.schema.json",
+ "height": 600,
+ "width": 254,
+ "hideSelection": false,
+ "fillHorizontally": true,
+ "formatter": {
+   "elmType": "div",
+   "attributes": {
+     "class": "sp-card-container"
+   },
+   "children": [
+     {
+       "elmType": "div",
+       "attributes": {
+         "class": "ms-bgColor-white sp-css-borderColor-neutralLight sp-card-borderHighlight sp-card-subContainer"
+       },
+       "children": [
+         {
+           "elmType": "div",
+           "attributes": {
+             "class": "sp-card-displayColumnContainer"
+           },
+           "children": [
+             {
+               "elmType": "p",
+               "attributes": {
+                 "class": "ms-fontColor-neutralSecondary sp-card-label"
+               },
+               "txtContent": "[!Title.DisplayName]"
+             },
+             {
+               "elmType": "p",
+               "attributes": {
+                 "title": "[$Title]",
+                 "class": "ms-fontColor-neutralPrimary sp-card-content sp-card-highlightedContent",
+                 "role": "heading",
+                 "aria-level": "3"
+               },
+               "txtContent": "=if ([$Title] == '', '–', [$Title])"
+             }
+           ]
+         },
+         {
+           "elmType": "div",
+           "attributes": {
+             "class": "sp-card-displayColumnContainer"
+           },
+           "children": [
+             {
+               "elmType": "p",
+               "attributes": {
+                 "class": "ms-fontColor-neutralSecondary sp-card-label"
+               },
+               "txtContent": "[!PropsalSubmissionDate.DisplayName]"
+             },
+             {
+               "elmType": "p",
+               "attributes": {
+                 "title": "=if ([$PropsalSubmissionDate.displayValue] == '', '–', [$PropsalSubmissionDate.displayValue])",
+                 "class": "ms-fontColor-neutralPrimary sp-card-content "
+               },
+               "txtContent": "=if ([$PropsalSubmissionDate.displayValue] == '', '–', [$PropsalSubmissionDate.displayValue])"
+             }
+           ]
+         },
+         {
+           "elmType": "div",
+           "attributes": {
+             "class": "sp-card-displayColumnContainer"
+           },
+           "children": [
+             {
+               "elmType": "p",
+               "attributes": {
+                 "class": "ms-fontColor-neutralSecondary sp-card-label"
+               },
+               "txtContent": "[!Project_x002d_Sponsor.DisplayName]"
+             },
+             {
+               "elmType": "p",
+               "attributes": {
+                 "title": "[$Project_x002d_Sponsor]",
+                 "class": "ms-fontColor-neutralPrimary sp-card-content "
+               },
+               "txtContent": "=if ([$Project_x002d_Sponsor] == '', '–', [$Project_x002d_Sponsor])"
+             }
+           ]
+         },
+         {
+           "elmType": "div",
+           "attributes": {
+             "class": "sp-card-displayColumnContainer"
+           },
+           "children": [
+             {
+               "elmType": "p",
+               "attributes": {
+                 "class": "ms-fontColor-neutralSecondary sp-card-label"
+               },
+               "txtContent": "[!OHILProgram.DisplayName]"
+             },
+             {
+               "elmType": "div",
+               "attributes": {
+                 "class": "sp-card-content sp-card-formatterRef"
+               },
+               "children": [
+                 {
+                   "columnFormatterReference": "[$OHILProgram]"
+                 }
+               ]
+             }
+           ]
+         },
+         {
+           "elmType": "div",
+           "attributes": {
+             "class": "sp-card-displayColumnContainer"
+           },
+           "children": [
+             {
+               "elmType": "p",
+               "attributes": {
+                 "class": "ms-fontColor-neutralSecondary sp-card-label"
+               },
+               "txtContent": "[!TotalAmountRequested.DisplayName]"
+             },
+             {
+               "elmType": "p",
+               "attributes": {
+                 "title": "=if ([$TotalAmountRequested.displayValue] == '', '–', [$TotalAmountRequested.displayValue])",
+                 "class": "ms-fontColor-neutralPrimary sp-card-content "
+               },
+               "txtContent": "=if ([$TotalAmountRequested.displayValue] == '', '–', [$TotalAmountRequested.displayValue])"
+             }
+           ]
+         },
+         {
+           "elmType": "div",
+           "attributes": {
+             "class": "sp-card-displayColumnContainer"
+           },
+           "children": [
+             {
+               "elmType": "p",
+               "attributes": {
+                 "class": "ms-fontColor-neutralSecondary sp-card-label"
+               },
+               "txtContent": "[!Status.DisplayName]"
+             },
+             {
+               "elmType": "div",
+               "attributes": {
+                 "class": "sp-card-content sp-card-formatterRef"
+               },
+               "children": [
+                 {
+                   "columnFormatterReference": "[$Status]"
+                 }
+               ]
+             }
+           ]
+         },
+         {
+           "elmType": "div",
+           "attributes": {
+             "class": "sp-card-displayColumnContainer"
+           },
+           "children": [
+             {
+               "elmType": "p",
+               "attributes": {
+                 "class": "ms-fontColor-neutralSecondary sp-card-label"
+               },
+               "txtContent": "[!InnovationPhose.DisplayName]"
+             },
+             {
+               "elmType": "div",
+               "attributes": {
+                 "class": "sp-card-content sp-card-formatterRef"
+               },
+               "children": [
+                 {
+                   "columnFormatterReference": "[$InnovationPhose]"
+                 }
+               ]
+             }
+           ]
+         },
+         {
+           "elmType": "div",
+           "attributes": {
+             "class": "sp-card-displayColumnContainer"
+           },
+           "children": [
+             {
+               "elmType": "p",
+               "attributes": {
+                 "class": "ms-fontColor-neutralSecondary sp-card-label"
+               },
+               "txtContent": "[!Risk.DisplayName]"
+             },
+             {
+               "elmType": "div",
+               "attributes": {
+                 "class": "sp-card-content sp-card-formatterRef"
+               },
+               "children": [
+                 {
+                   "columnFormatterReference": "[$Risk]"
+                 }
+               ]
+             }
+           ]
+         },
+         {
+           "elmType": "div",
+           "attributes": {
+             "class": "sp-card-lastTextColumnContainer"
+           },
+           "children": [
+             {
+               "elmType": "p",
+               "attributes": {
+                 "class": "ms-fontColor-neutralSecondary sp-card-label"
+               },
+               "txtContent": "[!HighVisibility.DisplayName]"
+             },
+             {
+               "elmType": "div",
+               "attributes": {
+                 "class": "sp-card-content sp-card-formatterRef"
+               },
+               "children": [
+                 {
+                   "columnFormatterReference": "[$HighVisibility]"
+                 }
+               ]
+             }
+           ]
+         },
+         {
+           "elmType": "div",
+           "attributes": {
+             "class": "sp-card-buttonContainer",
+             "style": "text-align:center; margin-top:10px;"
+           },
+           "children": [
+             { 
+               "elmType": "button",
+               "attributes": {
+                 "class": "ms-button ms-button-primary",
+                 "style": "padding:5px 10px; font-size:14px;",
+                 "title": "Open PowerApps Form"
+               },
+               "txtContent": "Open Form",
+               "customRowAction": {
+                 "action": "windowOpen",
+                 "actionParams": "=concat('https://apps.gov.powerapps.us/play/e/be0af134-97a1-eb26-8a6d-9297d3383730/a/8c6e2c85-8935-4b9f-9435-693dd3b6b9a5?tenantId=e95f1b23-abaf-45ee-821d-b7ab251ab3bf&sourcetime=1733684035671&ItemID=', [$ItemID])"
+               }
+             }
+           ]
+         }
+       ]
+     }
+   ]
+ }
+}
+          
