@@ -1,114 +1,115 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/tile-formatting.schema.json",
-  "height": 150,
-  "width": 100,
-  "hideSelection": false,
-  "fillHorizontally": true,
-  "formatter": {
-    "elmType": "div",
-    "attributes": {
-      "class": "sp-card-container"
+"$schema": "https://developer.microsoft.com/json-schemas/sp/v2/tile-formatting.schema.json",
+"height": 150,
+"width": 100,
+"hideSelection": false,
+"fillHorizontally": true,
+"formatter": {
+  "elmType": "div",
+  "attributes": {
+    "class": "sp-card-container"
+  },
+  "children": [
+    {
+      "elmType": "div",
+      "attributes": {
+        "class": "sp-card-defaultClickButton"
+      }
     },
-    "children": [
-      {
-        "elmType": "div",
-        "attributes": {
-          "class": "sp-card-defaultClickButton"
-        }
+    {
+      "elmType": "div",
+      "style": {
+        "display": "block",
+        "flexDirection": "column",
+        "alignItems": "center"
       },
-      {
-        "elmType": "div",
-        "style": {
-          "display": "block",
-          "flexDirection": "column",
-          "alignItems": "center"
-        },
-        "children": [
-          {
-            "elmType": "div",
-            "style": {
-              "display": "block",
-              "justifyContent": "center",
-              "alignItems": "center",
-              "width": "75px",
-              "height": "75px",
-              "flexShrink": "0"
+      "children": [
+        {
+          "elmType": "div",
+          "style": {
+            "display": "block",
+            "justifyContent": "center",
+            "alignItems": "center",
+            "width": "75px",
+            "height": "75px",
+            "flexShrink": "0"
+          },
+          "children": [
+            {
+              "elmType": "img",
+              "style": {
+                "display": "=if([$Icon] == '', 'none', '')",
+                "width": "60px",
+                "height": "60px",
+                "border-radius": "10px",
+                "objectFit": "contain"
+              },
+              "attributes": {
+                "src": "=getThumbnailImage([$Icon], 400, 400)",
+                "title": "[$Icon.fileName]",
+                "class": "sp-card-imagePreview"
+              }
             },
-            "children": [
-              {
-                "elmType": "img",
-                "style": {
-                  "display": "=if([$Icon] == '', 'none', '')",
-                  "width": "60px",
-                  "height": "60px",
-                  "border-radius": "10px",
-                  "objectFit": "contain"
+            {
+              "elmType": "svg",
+              "style": {
+                "display": "=if([$Icon] == '', '', 'none')",
+                "width": "60px",
+                "height": "60px"
+              },
+              "attributes": {
+                "preserveAspectRatio": "none",
+                "viewBox": "0 0 210 105",
+                "class": "sp-card-defaultImage ms-bgColor-themeLighter"
+              },
+              "children": [
+                {
+                  "elmType": "path",
+                  "attributes": {
+                    "id": "sp-card-defaultImage-path1",
+                    "d": "M0 25.7896L126.5 53.8817L96 105H0V25.7896Z"
+                  }
                 },
-                "attributes": {
-                  "src": "=getThumbnailImage([$Icon], 400, 400)",
-                  "title": "[$Icon.fileName]",
-                  "class": "sp-card-imagePreview"
+                {
+                  "elmType": "path",
+                  "attributes": {
+                    "id": "sp-card-defaultImage-path2",
+                    "d": "M96 105L158.7 0H204C207.314 0 210 2.68629 210 6V105H96Z"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "elmType": "div",
+          "attributes": {
+            "class": "sp-card-lastTextColumnContainer",
+            "style": {
+              "textAlign": "center",
+              "marginTop": "10px",
+              "width": "100%"
+            }
+          },
+          "children": [
+            {
+              "elmType": "p",
+              "attributes": {
+                "title": "[$Title]",
+                "class": "ms-fontColor-neutralPrimary sp-card-highlightedContent",
+                "role": "heading",
+                "aria-level": "3",
+                "style": {
+                  "textAlign": "center",
+                  "white-space": "pre-wrap"    
                 }
               },
-              {
-                "elmType": "svg",
-                "style": {
-                  "display": "=if([$Icon] == '', '', 'none')",
-                  "width": "60px",
-                  "height": "60px"
-                },
-                "attributes": {
-                  "preserveAspectRatio": "none",
-                  "viewBox": "0 0 210 105",
-                  "class": "sp-card-defaultImage ms-bgColor-themeLighter"
-                },
-                "children": [
-                  {
-                    "elmType": "path",
-                    "attributes": {
-                      "id": "sp-card-defaultImage-path1",
-                      "d": "M0 25.7896L126.5 53.8817L96 105H0V25.7896Z"
-                    }
-                  },
-                  {
-                    "elmType": "path",
-                    "attributes": {
-                      "id": "sp-card-defaultImage-path2",
-                      "d": "M96 105L158.7 0H204C207.314 0 210 2.68629 210 6V105H96Z"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "elmType": "div",
-            "attributes": {
-              "class": "sp-card-lastTextColumnContainer",
-              "style": {
-                "textAlign": "center",
-                "marginTop": "10px",
-                "width": "100%"
-              }
-            },
-            "children": [
-              {
-                "elmType": "p",
-                "attributes": {
-                  "title": "[$Title]",
-                  "class": "ms-fontColor-neutralPrimary sp-card-content sp-card-highlightedContent",
-                  "role": "heading",
-                  "aria-level": "3",
-                  "style": {
-                    "textAlign": "center"
-                  }
-                },
-                "txtContent": "=if ([$Title] == '', '–', [$Title])"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+              "txtContent": "=if ([$Title] == '', '–', [$Title])"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
 }
